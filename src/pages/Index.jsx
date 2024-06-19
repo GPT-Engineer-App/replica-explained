@@ -2,8 +2,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FaDownload } from "react-icons/fa";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+import { format } from "date-fns";
 
 const Index = () => {
+  const dateRange = "Jan 20, 2023 - Feb 09, 2023";
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
@@ -57,11 +64,11 @@ const Index = () => {
           </TabsContent>
         </Tabs>
         <div className="flex items-center space-x-4">
-          <input type="text" placeholder="Jan 20, 2023 - Feb 09, 2023" className="p-2 rounded-md" />
-          <button className="flex items-center space-x-2 bg-blue-500 text-white p-2 rounded-md">
+          <Input type="text" value={dateRange} readOnly className="p-2 rounded-md" />
+          <Button className="flex items-center space-x-2 bg-blue-500 text-white p-2 rounded-md">
             <FaDownload />
             <span>Download</span>
-          </button>
+          </Button>
         </div>
       </div>
       <div className="mb-4">
@@ -78,26 +85,70 @@ const Index = () => {
           {/* Sales list placeholder */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+              <Avatar>
+                <AvatarImage src="https://via.placeholder.com/40" />
+                <AvatarFallback>OM</AvatarFallback>
+              </Avatar>
               <div>
-                <p className="font-bold">John Doe</p>
-                <p className="text-gray-500">john.doe@example.com</p>
+                <p className="font-bold">Olivia Martin</p>
+                <p className="text-gray-500">olivia.martin@email.com</p>
               </div>
               <div className="ml-auto">
-                <Badge>$123.45</Badge>
+                <Badge>$1,999.00</Badge>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+              <Avatar>
+                <AvatarImage src="https://via.placeholder.com/40" />
+                <AvatarFallback>JL</AvatarFallback>
+              </Avatar>
               <div>
-                <p className="font-bold">Jane Smith</p>
-                <p className="text-gray-500">jane.smith@example.com</p>
+                <p className="font-bold">Jackson Lee</p>
+                <p className="text-gray-500">jackson.lee@email.com</p>
               </div>
               <div className="ml-auto">
-                <Badge>$67.89</Badge>
+                <Badge>$39.00</Badge>
               </div>
             </div>
-            {/* Add more sales items as needed */}
+            <div className="flex items-center space-x-4">
+              <Avatar>
+                <AvatarImage src="https://via.placeholder.com/40" />
+                <AvatarFallback>IN</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-bold">Isabella Nguyen</p>
+                <p className="text-gray-500">isabella.nguyen@email.com</p>
+              </div>
+              <div className="ml-auto">
+                <Badge>$299.00</Badge>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Avatar>
+                <AvatarImage src="https://via.placeholder.com/40" />
+                <AvatarFallback>WK</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-bold">William Kim</p>
+                <p className="text-gray-500">will@email.com</p>
+              </div>
+              <div className="ml-auto">
+                <Badge>$99.00</Badge>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <Avatar>
+                <AvatarImage src="https://via.placeholder.com/40" />
+                <AvatarFallback>SD</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-bold">Sofia Davis</p>
+                <p className="text-gray-500">sofia.davis@email.com</p>
+              </div>
+              <div className="ml-auto">
+                <Badge>$39.00</Badge>
+              </div>
+            </div>
           </div>
         </div>
       </div>
